@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IBM Bob</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #000000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .scene {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .scene.active {
+      pointer-events: auto;
+    }
+
+    /* CENA 1 */
+    #scene1 p {
+      font-family: Georgia, serif;
+      font-size: 1.8rem;
+      color: #ffffff;
+      font-style: italic;
+      text-align: center;
+      max-width: 80vw;
+      line-height: 1.5;
+    }
+
+    /* CENA 2 */
+    #scene2 pre {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 1.4rem;
+      color: #ffffff;
+      white-space: pre;
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    #click-hint {
+      margin-top: 2rem;
+      font-family: Georgia, serif;
+      font-size: 1.2rem;
+      color: #FFE81F;
+      opacity: 0;
+      animation: none;
+    }
+
+    #click-hint.blinking {
+      animation: blink 1s ease-in-out infinite alternate;
+    }
+
+    @keyframes blink {
+      from { opacity: 1; }
+      to   { opacity: 0.3; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- CENA 1 -->
+  <div class="scene" id="scene1">
+    <p>Há muito tempo atrás, em uma sala de programação distante, muito distante…</p>
+  </div>
+
+  <!-- CENA 2 -->
+  <div class="scene" id="scene2">
+    <pre>
+    ██████╗  ██████╗ ██████╗ 
+    ██╔══██╗██╔════╝ ██╔══██╗
+    ██████╔╝██║   ██║██████╔╝
+    ██╔══██╗██║   ██║██╔══██╗
+    ██████╔╝╚██████╔╝██████╔╝
+    ╚═════╝  ╚═════╝ ╚═════╝ 
+         I B M   B O B</pre>
+    <div id="click-hint">[ clique em mim ]</div>
+  </div>
+
+  <script>
+    var scene1 = document.getElementById('scene1');
+    var scene2 = document.getElementById('scene2');
+    var clickHint = document.getElementById('click-hint');
+
+    function fadeIn(el, duration, callback) {
+      el.style.transition = 'opacity ' + duration + 'ms ease';
+      el.style.opacity = '0';
+      el.classList.add('active');
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          el.style.opacity = '1';
+          if (callback) {
+            setTimeout(callback, duration);
+          }
+        });
+      });
+    }
+
+    function fadeOut(el, duration, callback) {
+      el.style.transition = 'opacity ' + duration + 'ms ease';
+      el.style.opacity = '0';
+      setTimeout(function () {
+        el.classList.remove('active');
+        if (callback) callback();
+      }, duration);
+    }
+
+    // CENA 1: fade in 2s → visível 3s → fade out 2s
+    fadeIn(scene1, 2000, function () {
+      setTimeout(function () {
+        fadeOut(scene1, 2000, function () {
+
+          // CENA 2: fade in 2s
+          fadeIn(scene2, 2000, function () {
+
+            // Após 25s, surgir hint com fade in de 1s + iniciar piscar
+            setTimeout(function () {
+              clickHint.style.transition = 'opacity 1s ease';
+              clickHint.style.opacity = '1';
+              setTimeout(function () {
+                clickHint.classList.add('blinking');
+              }, 1000);
+            }, 25000);
+
+          });
+        });
+      }, 3000);
+    });
+
+    // Clique em qualquer lugar redireciona
+    document.addEventListener('click', function () {
+      window.location.href = 'https://bob.ibm.com/';
+    });
+  </script>
+
+</body>
+</html>
