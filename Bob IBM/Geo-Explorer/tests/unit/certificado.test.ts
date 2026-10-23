@@ -11,7 +11,7 @@ afterEach(() => process.chdir(projectRoot));
 
 describe("/certificado", () => {
   it("está registrado localmente no Bob", () => {
-    const prompt = readFileSync(resolve(projectRoot, "src/commands/certificado.md"), "utf8");
+    const prompt = readFileSync(resolve(projectRoot, ".bob/commands/certificado.md"), "utf8");
     assert.match(prompt, /argument-hint: <nome-do-usuario> <trilha-concluída>/);
     assert.match(prompt, /FICTÍCIO — SEM VALIDADE OFICIAL/);
   });

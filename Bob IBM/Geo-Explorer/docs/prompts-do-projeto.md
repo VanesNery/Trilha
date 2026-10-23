@@ -1,10 +1,10 @@
 # Prompts e decisões de desenvolvimento
 
-Este documento preserva o texto integral dos três prompts operacionais armazenados em `src/commands/`. Esses textos são instruções para o Bob. As funções em `commands/*.ts` são suas implementações programáticas reutilizadas pelo MCP.
+Este documento preserva o texto integral dos três prompts operacionais armazenados em `.bob/commands/`. Esses textos são instruções para o Bob. As funções em `commands/*.ts` são suas implementações programáticas reutilizadas pelo MCP.
 
 ## `/trilha`
 
-Arquivo: `src/commands/trilha.md`
+Arquivo: `.bob/commands/trilha.md`
 
 ```text
 ---
@@ -25,7 +25,7 @@ Argumento declarado no cabeçalho: `<tecnologia>`.
 
 ## `/desafio`
 
-Arquivo: `src/commands/desafio.md`
+Arquivo: `.bob/commands/desafio.md`
 
 ```text
 ---
@@ -44,7 +44,7 @@ Argumentos declarados no cabeçalho: `<nível> <tecnologia>`.
 
 ## `/certificado`
 
-Arquivo: `src/commands/certificado.md`
+Arquivo: `.bob/commands/certificado.md`
 
 ```text
 ---
@@ -75,5 +75,7 @@ O histórico de trabalho estabeleceu estas decisões, resumidas em ordem:
 8. Criar testes unitários e de fluxo, testar Java, gravar resultados e separar testes unitários em um arquivo para cada comando.
 9. Criar um servidor MCP local que possa servir de base para uso posterior por HTTP/HTTPS, SSO ou API, usando a pasta `mcp`.
 10. Mover os prompts Markdown para `src/commands/` e documentar o projeto, seus prompts, modos de uso, dicas e oportunidades de evolução.
+11. Após a auditoria identificar que o Bob procura comandos do workspace em `.bob/commands/`, mover os três prompts para esse diretório e ajustar testes e documentação.
+12. Mover a implementação e a documentação do servidor MCP de `mcp/` para `src/mcp/`, atualizando os scripts e caminhos do projeto.
 
 As solicitações anteriores usaram variações e correções de texto para reafirmar os mesmos objetivos. Os três prompts operacionais integrais acima são a versão vigente armazenada no repositório.

@@ -1,13 +1,13 @@
 import { McpServer } from "@modelcontextprotocol/server";
 import * as z from "zod/v4";
-import certificado from "../commands/certificado.ts";
-import desafio from "../commands/desafio.ts";
-import { carregarTrilhas } from "../commands/index.ts";
-import trilha from "../commands/trilha.ts";
+import certificado from "../../commands/certificado.ts";
+import desafio from "../../commands/desafio.ts";
+import { carregarTrilhas } from "../../commands/index.ts";
+import trilha from "../../commands/trilha.ts";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
-const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
+const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), "../..");
 
 function texto(conteudo: string) {
   return { content: [{ type: "text" as const, text: conteudo }] };

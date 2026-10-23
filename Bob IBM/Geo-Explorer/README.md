@@ -37,7 +37,7 @@ npx tsc --noEmit
 
 ### 1. Prompts locais do Bob
 
-Os prompts Markdown estão em `src/commands/`. Quando o ambiente Bob estiver configurado para carregar esses arquivos como comandos locais, a sintaxe planejada é:
+Os prompts Markdown estão em `.bob/commands/`, diretório de comandos locais do projeto no Bob. A sintaxe é:
 
 ```text
 /trilha Java
@@ -48,7 +48,7 @@ Os prompts Markdown estão em `src/commands/`. Quando o ambiente Bob estiver con
 
 `Java` encontra mais de uma trilha; escolha pelo nome completo para obter um plano sem ambiguidade. Para certificado, separe o nome e o nome da trilha com `|`.
 
-**Integração do Bob:** os prompts estão em `src/commands/`, conforme a organização solicitada. O Bob precisa reconhecer essa pasta ou receber os prompts por configuração para que os comandos apareçam automaticamente no chat. A presença dos arquivos no projeto, por si só, não registra um comando no Bob. Os testes verificam o conteúdo dos prompts e a lógica TypeScript, não a descoberta automática pelo chat.
+**Integração do Bob:** cada arquivo Markdown em `.bob/commands/` corresponde ao comando local com o mesmo nome. Abra o projeto no Bob e digite `/` no chat para localizá-los. Os testes verificam os arquivos e a lógica TypeScript; a disponibilidade no menu ainda depende de abrir o workspace correto no Bob.
 
 ### 2. Servidor MCP local por `stdio`
 
@@ -75,7 +75,7 @@ Configuração por ambiente:
 MCP_HOST=127.0.0.1 MCP_PORT=3333 npm run mcp:http
 ```
 
-O padrão fica no loopback. Para bind remoto, o programa exige `MCP_ALLOW_REMOTE_BIND=true`; essa opção **não adiciona autenticação**. Use-a somente quando o processo estiver numa rede privada, atrás de um gateway que aplique TLS e autenticação antes de encaminhar as requisições. Veja [mcp/README.md](mcp/README.md).
+O padrão fica no loopback. Para bind remoto, o programa exige `MCP_ALLOW_REMOTE_BIND=true`; essa opção **não adiciona autenticação**. Use-a somente quando o processo estiver numa rede privada, atrás de um gateway que aplique TLS e autenticação antes de encaminhar as requisições. Veja [src/mcp/README.md](src/mcp/README.md).
 
 O endpoint `/mcp` fala o protocolo MCP sobre Streamable HTTP (JSON-RPC). Ele não cria rotas REST, como `/api/trilhas`. Uma aplicação que precise de REST terá de implementar um gateway próprio. A autenticação OAuth/OIDC/SSO, TLS, autorização e hospedagem também ficam para a infraestrutura futura.
 
@@ -135,11 +135,16 @@ Geo-Explorer/
 │   ├── resultados-testes.txt
 │   ├── desafios-gerados/     # Exemplo gravado pelo fluxo de testes
 │   └── certificados-emetidos/# Exemplo fictício gravado pelo fluxo de testes
-├── mcp/                      # Registro das ferramentas e transportes MCP
-├── src/commands/             # Prompts Markdown do Bob
+├── src/
+│   └── mcp/                  # Registro das ferramentas e transportes MCP
+│       ├── server.ts
+│       ├── stdio.ts
+│       ├── http.ts
+│       └── README.md
+├── .bob/commands/            # Prompts Markdown dos slash commands locais do Bob
 └── tests/
     ├── unit/                 # Um arquivo por comando
-    └── flow/                 # Consulta, desafio e certificado no mesmo fluxo
+    └── flow/                 # Fluxo de estudo e inicialização MCP por stdio
 ```
 
 ### Arquivos TypeScript
@@ -148,9 +153,9 @@ Geo-Explorer/
 - `commands/trilha.ts`: busca por tecnologia/nome, apresenta opções se houver ambiguidade, e monta o plano.
 - `commands/desafio.ts`: combina tecnologia e nível e escolhe uma proposta compatível.
 - `commands/certificado.ts`: valida o nome da trilha e monta o certificado fictício com data atual.
-- `mcp/server.ts`: registra as ferramentas MCP e chama os módulos de `commands/`.
-- `mcp/stdio.ts`: inicia o transporte local `stdio`.
-- `mcp/http.ts`: inicia o endpoint HTTP, a rota de saúde e as proteções de host/origem para execução local.
+- `src/mcp/server.ts`: registra as ferramentas MCP e chama os módulos de `commands/`.
+- `src/mcp/stdio.ts`: inicia o transporte local `stdio`.
+- `src/mcp/http.ts`: inicia o endpoint HTTP, a rota de saúde e as proteções de host/origem para execução local.
 
 Os prompts `.md` orientam o Bob; os módulos `.ts` fazem o processamento determinístico e permitem integração por código. Consulte [Prompts e decisões](docs/prompts-do-projeto.md) para ler o texto integral dos prompts operacionais.
 
@@ -201,8 +206,9 @@ npx tsc --noEmit
 - `tests/unit/desafio.test.ts`: arquivo de prompt, validação de tecnologia/nível e respostas de níveis diferentes.
 - `tests/unit/certificado.test.ts`: arquivo de prompt, parâmetros, trilha inválida e certificado de exemplo.
 - `tests/flow/geo-explorer-flow.test.ts`: percorre consulta Java, plano, desafio e certificado para a mesma pessoa fictícia; grava os exemplos em `docs/`.
+- `tests/flow/mcp-stdio-flow.test.ts`: inicia `src/mcp/stdio.ts` como cliente MCP, verifica as quatro ferramentas registradas e chama as ferramentas de plano, desafio e certificado.
 
-O relatório histórico em `docs/resultados-testes.txt` registra 20 testes aprovados, 100% de linhas, 97,83% de branches e 100% de funções para a lógica de `commands/`. Essa execução foi feita antes da inclusão do servidor MCP. Depois da criação do MCP, a checagem TypeScript foi aprovada, mas a cobertura registrada ainda não mede `mcp/`.
+`npm run test:coverage` mede a lógica em `commands/` e aplica os limites de 80% de linhas, branches e funções. O teste MCP valida o transporte `stdio` e as chamadas das ferramentas, mas ainda não está incluído no cálculo de cobertura. O teste de fluxo Java grava os arquivos de exemplo em `docs/desafios-gerados/` e `docs/certificados-emetidos/`; os valores registrados em `docs/resultados-testes.txt` são históricos e podem mudar conforme a suíte evolui. Execute os comandos acima para obter os resultados atuais.
 
 ## Arquivos ignorados pelo Bob
 
@@ -215,12 +221,12 @@ O relatório histórico em `docs/resultados-testes.txt` registra 20 testes aprov
 3. Os desafios são gerados de uma lista de modelos locais, não por um serviço externo.
 4. O certificado é um documento ilustrativo; não comprova conclusão nem é reconhecido por instituição.
 5. Não existe login ou SSO no servidor. Não publique o HTTP diretamente na internet.
-6. A pasta `src/commands/` contém os prompts, mas a integração do Bob depende de configurar a descoberta dessa pasta.
+6. Os comandos do Bob são locais ao workspace e ficam em `.bob/commands/`; não são comandos de terminal.
 
 ## Ideias para evolução
 
 - Definir validação de schema completa para o catálogo e mensagens para cada campo inválido.
-- Criar testes MCP cliente-servidor e incluir `mcp/` nos critérios de cobertura.
+- Adicionar um teste de integração para o transporte HTTP e avaliar a cobertura interna de `src/mcp/`.
 - Injetar o repositório de dados nas funções para testar sem mudar o diretório de trabalho.
 - Escrever ementas autorais, objetivos observáveis e critérios de avaliação para cada trilha.
 - Adicionar fontes e data de atualização se futuramente forem usados dados reais.
@@ -242,5 +248,5 @@ O relatório histórico em `docs/resultados-testes.txt` registra 20 testes aprov
 
 - [Guia completo do projeto](docs/guia-do-projeto.md)
 - [Prompts operacionais e decisões de desenvolvimento](docs/prompts-do-projeto.md)
-- [Detalhes e configuração do servidor MCP](mcp/README.md)
+- [Detalhes e configuração do servidor MCP](src/mcp/README.md)
 - [Resultados registrados dos testes](docs/resultados-testes.txt)

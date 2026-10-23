@@ -13,7 +13,7 @@
   },
   "include": [
     "commands/**/*.ts",
-    "mcp/**/*.ts",
+    "src/**/*.ts",
     "tests/**/*.ts"
   ]
 }

@@ -4,8 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "mcp:stdio": "node --experimental-strip-types mcp/stdio.ts",
-    "mcp:http": "node --experimental-strip-types mcp/http.ts",
+    "mcp:stdio": "node --experimental-strip-types src/mcp/stdio.ts",
+    "mcp:http": "node --experimental-strip-types src/mcp/http.ts",
     "test": "node --experimental-strip-types --test tests/unit/*.test.ts tests/flow/*.test.ts",
     "test:coverage": "node --experimental-strip-types --experimental-test-coverage --test-coverage-include=commands/**/*.ts --test-coverage-lines=80 --test-coverage-branches=80 --test-coverage-functions=80 --test tests/unit/*.test.ts tests/flow/*.test.ts"
   },

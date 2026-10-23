@@ -13,7 +13,7 @@ afterEach(() => process.chdir(projectRoot));
 
 describe("/trilha", () => {
   it("está registrado localmente no Bob", () => {
-    const prompt = readFileSync(resolve(projectRoot, "src/commands/trilha.md"), "utf8");
+    const prompt = readFileSync(resolve(projectRoot, ".bob/commands/trilha.md"), "utf8");
     assert.match(prompt, /argument-hint: <tecnologia>/);
     assert.match(prompt, /data\/trilhas\.json/);
     assert.match(prompt, /plano de estudos/i);

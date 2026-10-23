@@ -11,7 +11,7 @@ afterEach(() => process.chdir(projectRoot));
 
 describe("/desafio", () => {
   it("está registrado localmente no Bob", () => {
-    const prompt = readFileSync(resolve(projectRoot, "src/commands/desafio.md"), "utf8");
+    const prompt = readFileSync(resolve(projectRoot, ".bob/commands/desafio.md"), "utf8");
     assert.match(prompt, /argument-hint: <nível> <tecnologia>/);
     assert.match(prompt, /desafio de código/i);
   });

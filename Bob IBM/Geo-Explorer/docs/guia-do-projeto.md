@@ -30,16 +30,17 @@ Geo-Explorer/
 │   │   └── certificado-java-aluno.md
 │   └── desafios-gerados/
 │       └── desafio-java-aluno.md
-├── mcp/
-│   ├── README.md
-│   ├── http.ts
-│   ├── server.ts
-│   └── stdio.ts
-├── src/
+├── .bob/
 │   └── commands/
 │       ├── certificado.md
 │       ├── desafio.md
 │       └── trilha.md
+├── src/
+│   └── mcp/
+│       ├── README.md
+│       ├── http.ts
+│       ├── server.ts
+│       └── stdio.ts
 └── tests/
     ├── flow/
     │   └── geo-explorer-flow.test.ts
@@ -81,15 +82,15 @@ As tecnologias são arrays: uma trilha pode abranger mais de uma. O campo `numer
 
 As funções exportam objetos com metadados e um método `execute(args)`. Isso facilita reuso por testes, MCP e futuras interfaces.
 
-### Prompts `src/commands/`
+### Prompts `.bob/commands/`
 
-Os `.md` são instruções para o Bob, não implementações TypeScript. Eles informam o objetivo, os argumentos, como consultar o JSON e como tratar casos sem correspondência. O arquivo com o texto completo de cada prompt é [docs/prompts-do-projeto.md](prompts-do-projeto.md).
+Os `.md` são instruções para o Bob, não implementações TypeScript. Eles informam o objetivo, os argumentos, como consultar o JSON e como tratar casos sem correspondência. O arquivo com o texto completo de cada prompt é [docs/prompts-do-projeto.md](prompts-do-projeto.md). O diretório `.bob/commands/` é o local de comandos personalizados do workspace.
 
-Os prompts foram movidos para `src/commands/` a pedido do projeto. Se a instalação do Bob usada no futuro só detectar comandos numa pasta especial, a integração precisa configurar a descoberta para este caminho ou copiar/publicar esses prompts no local reconhecido. Os testes atuais verificam os arquivos e a lógica TypeScript; não provam que o chat do Bob carregou os prompts automaticamente.
+Os testes verificam que os arquivos existem no caminho esperado e que a lógica TypeScript funciona. Para confirmar a descoberta no ambiente, abra a raiz do Geo-Explorer no Bob e verifique se os comandos aparecem ao digitar `/` no chat.
 
-### MCP `mcp/`
+### MCP `src/mcp/`
 
-`server.ts` registra as quatro ferramentas e encaminha chamadas para o catálogo e a lógica existente. `stdio.ts` expõe o transporte de processo local. `http.ts` publica Streamable HTTP em `/mcp` e uma rota `/healthz`. `mcp/README.md` descreve a execução e os pré-requisitos para uma futura publicação remota.
+`server.ts` registra as quatro ferramentas e encaminha chamadas para o catálogo e a lógica existente. `stdio.ts` expõe o transporte de processo local. `http.ts` publica Streamable HTTP em `/mcp` e uma rota `/healthz`. `src/mcp/README.md` descreve a execução e os pré-requisitos para uma futura publicação remota.
 
 O protocolo MCP sobre HTTP não é uma API REST. Um cliente MCP compatível envia as chamadas pelo endpoint de protocolo. Para clientes REST, seria necessário criar um gateway próprio que reutilize os mesmos módulos.
 
@@ -134,7 +135,7 @@ npm run mcp:http
 
 `mcp:stdio` é para clientes locais que iniciam o processo. `mcp:http` inicia o servidor na interface loopback por padrão. As versões exatas e os scripts estão em `package.json`; `package-lock.json` fixa a árvore instalada.
 
-O projeto também configura `npm run test:coverage`, que pede ao Node cobertura mínima de 80% em linhas, branches e funções para `commands/**/*.ts`. O último relatório arquivado registra 20 de 20 testes aprovados e 100% de linhas, 97,83% de branches e 100% de funções. Essa execução precede a criação do servidor MCP. Após a inclusão do MCP, a checagem `tsc --noEmit` foi executada com sucesso; a cobertura registrada não inclui `mcp/**/*.ts`.
+O projeto também configura `npm run test:coverage`, que pede ao Node cobertura mínima de 80% em linhas, branches e funções para `commands/**/*.ts`. O último relatório arquivado registra 20 de 20 testes aprovados e 100% de linhas, 97,83% de branches e 100% de funções. Essa execução precede a criação do servidor MCP. Após a inclusão do MCP, a checagem `tsc --noEmit` foi executada com sucesso; a cobertura registrada não inclui `src/mcp/**/*.ts`.
 
 ## 6. Testes existentes
 
@@ -173,7 +174,7 @@ O projeto é um ponto de partida para praticar evolução incremental. Boas pró
 2. Separar `catalogo`, serviços de plano/desafio/certificado e adaptadores, e injetar o carregador do catálogo nos serviços para simplificar testes.
 3. Incluir ementas próprias, revisadas e claramente autorais, para que cada módulo tenha objetivos de aprendizagem mensuráveis.
 4. Criar testes MCP cliente-servidor para listar ferramentas, validar parâmetros, verificar respostas e lidar com erros.
-5. Medir cobertura também para `mcp/` e automatizar checagens num pipeline de integração contínua.
+5. Medir cobertura também para `src/mcp/` e automatizar checagens num pipeline de integração contínua.
 6. Projetar um armazenamento de progresso com consentimento, privacidade, migrações e testes antes de persistir dados pessoais.
 7. Integrar um provedor de identidade real e documentar escopos, expiração de tokens, autorização por ferramenta, auditoria e revogação.
 8. Se houver necessidade concreta de REST, publicar endpoints documentados com OpenAPI sem confundir REST com Streamable HTTP/MCP.
@@ -189,4 +190,4 @@ O projeto é um ponto de partida para praticar evolução incremental. Boas pró
 
 ## 10. Histórico resumido das decisões
 
-O projeto começou com uma estrutura de pastas, catálogo JSON e amostras fictícias de trilhas. O formato foi ajustado para `{"trilhas": [...]}` e os identificadores definidos como números. Depois foram criados prompts Markdown e implementações TypeScript para `/trilha`, `/desafio` e `/certificado`; `shared.ts` foi renomeado para `index.ts`. Os testes foram separados por comando e acompanhados por um teste de fluxo com relatório em texto. Os prompts foram movidos para `src/commands/`. Por fim, o servidor MCP passou a expor essas funções por `stdio` e Streamable HTTP local, com documentação para uma futura camada de publicação segura.
+O projeto começou com uma estrutura de pastas, catálogo JSON e amostras fictícias de trilhas. O formato foi ajustado para `{"trilhas": [...]}` e os identificadores definidos como números. Depois foram criados prompts Markdown e implementações TypeScript para `/trilha`, `/desafio` e `/certificado`; `shared.ts` foi renomeado para `index.ts`. Os testes foram separados por comando e acompanhados por um teste de fluxo com relatório em texto. Os prompts foram primeiro movidos para `src/commands/` e, posteriormente, para `.bob/commands/`, o local reconhecido pelo Bob para comandos do workspace. Por fim, o servidor MCP passou a expor essas funções por `stdio` e Streamable HTTP local, com documentação para uma futura camada de publicação segura.
