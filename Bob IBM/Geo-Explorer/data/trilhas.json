@@ -1,0 +1,963 @@
+{
+  "trilhas": [
+    {
+      "id": 1,
+      "nome": "Desenvolvimento Web com HTML e CSS",
+      "tecnologia": [
+        "HTML",
+        "CSS",
+        "Git"
+      ],
+      "nivel": "Iniciante",
+      "numero_modulos": 8,
+      "xp_total": 4200,
+      "badges_disponiveis": [
+        "Primeira Página",
+        "Estilista Web",
+        "Commit Inicial"
+      ],
+      "promocoes": {
+        "ativa": true,
+        "descricao": "Cupom fictício de 20% para um curso complementar",
+        "validade": "2027-03-31"
+      },
+      "vitalicio": false,
+      "lives_ao_vivo": [
+        {
+          "tema": "Montando uma landing page",
+          "frequencia": "Quintas às 19h",
+          "status": "agenda fictícia"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "nome": "JavaScript Moderno: do Zero ao DOM",
+      "tecnologia": [
+        "JavaScript",
+        "HTML",
+        "CSS"
+      ],
+      "nivel": "Iniciante",
+      "numero_modulos": 10,
+      "xp_total": 5600,
+      "badges_disponiveis": [
+        "Lógica em Ação",
+        "DOM Explorer",
+        "JS Essencial"
+      ],
+      "promocoes": {
+        "ativa": false,
+        "descricao": "Sem promoção fictícia vigente",
+        "validade": null
+      },
+      "vitalicio": true,
+      "lives_ao_vivo": [
+        {
+          "tema": "Desafios de lógica ao vivo",
+          "frequencia": "Segundas às 20h",
+          "status": "agenda fictícia"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "nome": "React para Interfaces Interativas",
+      "tecnologia": [
+        "React",
+        "JavaScript",
+        "CSS"
+      ],
+      "nivel": "Intermediário",
+      "numero_modulos": 12,
+      "xp_total": 7800,
+      "badges_disponiveis": [
+        "Componente Criado",
+        "Hooks na Prática",
+        "Interface Dinâmica"
+      ],
+      "promocoes": {
+        "ativa": true,
+        "descricao": "Aula bônus fictícia sobre acessibilidade",
+        "validade": "2027-04-15"
+      },
+      "vitalicio": false,
+      "lives_ao_vivo": [
+        {
+          "tema": "Estado e efeitos sem mistério",
+          "frequencia": "Quartas às 19h30",
+          "status": "agenda fictícia"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "nome": "Node.js e APIs REST",
+      "tecnologia": [
+        "Node.js",
+        "Express",
+        "JavaScript"
+      ],
+      "nivel": "Intermediário",
+      "numero_modulos": 11,
+      "xp_total": 7300,
+      "badges_disponiveis": [
+        "API Builder",
+        "Rotas REST",
+        "Servidor Node"
+      ],
+      "promocoes": {
+        "ativa": false,
+        "descricao": "Nenhuma oferta fictícia ativa",
+        "validade": null
+      },
+      "vitalicio": true,
+      "lives_ao_vivo": [
+        {
+          "tema": "Construindo uma API do zero",
+          "frequencia": "Terças às 19h",
+          "status": "agenda fictícia"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "nome": "Python para Iniciantes",
+      "tecnologia": [
+        "Python",
+        "Git"
+      ],
+      "nivel": "Iniciante",
+      "numero_modulos": 9,
+      "xp_total": 4900,
+      "badges_disponiveis": [
+        "Hello Python",
+        "Laços e Listas",
+        "Automatizador"
+      ],
+      "promocoes": {
+        "ativa": true,
+        "descricao": "Desconto fictício de 15% em laboratório extra",
+        "validade": "2027-02-28"
+      },
+      "vitalicio": true,
+      "lives_ao_vivo": [
+        {
+          "tema": "Automatizando tarefas simples",
+          "frequencia": "Sábados às 10h",
+          "status": "agenda fictícia"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "nome": "Python para Análise de Dados",
+      "tecnologia": [
+        "Python",
+        "Pandas",
+        "Jupyter"
+      ],
+      "nivel": "Intermediário",
+      "numero_modulos": 13,
+      "xp_total": 8600,
+      "badges_disponiveis": [
+        "Data Wrangler",
+        "Gráfico Revelador",
+        "Notebook Pro"
+      ],
+      "promocoes": {
+        "ativa": false,
+        "descricao": "Sem promoção fictícia no momento",
+        "validade": null
+      },
+      "vitalicio": false,
+      "lives_ao_vivo": [
+        {
+          "tema": "Exploração de dados com Pandas",
+          "frequencia": "Quintas às 20h",
+          "status": "agenda fictícia"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "nome": "Java e Orientação a Objetos",
+      "tecnologia": [
+        "Java",
+        "Maven",
+        "JUnit"
+      ],
+      "nivel": "Iniciante",
+      "numero_modulos": 12,
+      "xp_total": 6900,
+      "badges_disponiveis": [
+        "Classe Fundamental",
+        "Objeto em Campo",
+        "Java Starter"
+      ],
+      "promocoes": {
+        "ativa": true,
+        "descricao": "Mentoria em grupo fictícia incluída",
+        "validade": "2027-05-01"
+      },
+      "vitalicio": true,
+      "lives_ao_vivo": [
+        {
+          "tema": "POO com exemplos do cotidiano",
+          "frequencia": "Segundas às 19h",
+          "status": "agenda fictícia"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "nome": "Spring Boot para Microsserviços",
+      "tecnologia": [
+        "Java",
+        "Spring Boot",
+        "Docker"
+      ],
+      "nivel": "Avançado",
+      "numero_modulos": 15,
+      "xp_total": 11200,
+      "badges_disponiveis": [
+        "Spring Architect",
+        "Microsserviço em Pé",
+        "Container Java"
+      ],
+      "promocoes": {
+        "ativa": false,
+        "descricao": "Nenhuma promoção fictícia ativa",
+        "validade": null
+      },
+      "vitalicio": false,
+      "lives_ao_vivo": [
+        {
+          "tema": "Comunicação entre serviços",
+          "frequencia": "Quartas às 20h",
+          "status": "agenda fictícia"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "nome": "C# e .NET para Aplicações Web",
+      "tecnologia": [
+        "C#",
+        ".NET",
+        "ASP.NET Core"
+      ],
+      "nivel": "Intermediário",
+      "numero_modulos": 12,
+      "xp_total": 8100,
+      "badges_disponiveis": [
+        "Dotnet Developer",
+        "Endpoint Criado",
+        "C Sharp Explorer"
+      ],
+      "promocoes": {
+        "ativa": true,
+        "descricao": "Projeto guiado fictício liberado por tempo limitado",
+        "validade": "2027-06-10"
+      },
+      "vitalicio": true,
+      "lives_ao_vivo": [
+        {
+          "tema": "API com ASP.NET Core",
+          "frequencia": "Terças às 20h",
+          "status": "agenda fictícia"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "nome": "SQL e Modelagem de Banco de Dados",
+      "tecnologia": [
+        "SQL",
+        "PostgreSQL",
+        "DBeaver"
+      ],
+      "nivel": "Iniciante",
+      "numero_modulos": 8,
+      "xp_total": 4500,
+      "badges_disponiveis": [
+        "Query Inicial",
+        "Modelo Relacional",
+        "SQL Detective"
+      ],
+      "promocoes": {
+        "ativa": false,
+        "descricao": "Sem oferta fictícia vigente",
+        "validade": null
+      },
+      "vitalicio": true,
+      "lives_ao_vivo": [
+        {
+          "tema": "Consultas SQL na prática",
+          "frequencia": "Sextas às 19h",
+          "status": "agenda fictícia"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "nome": "Power BI e Visualização de Dados",
+      "tecnologia": [
+        "Power BI",
+        "DAX",
+        "Excel"
+      ],
+      "nivel": "Intermediário",
+      "numero_modulos": 10,
+      "xp_total": 6400,
+      "badges_disponiveis": [
+        "Dashboard Designer",
+        "DAX Explorer",
+        "Storyteller de Dados"
+      ],
+      "promocoes": {
+        "ativa": true,
+        "descricao": "Template fictício de dashboard como bônus",
+        "validade": "2027-03-20"
+      },
+      "vitalicio": false,
+      "lives_ao_vivo": [
+        {
+          "tema": "Dashboard que conta uma história",
+          "frequencia": "Quintas às 18h30",
+          "status": "agenda fictícia"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "nome": "Fundamentos de Cloud AWS",
+      "tecnologia": [
+        "AWS",
+        "Cloud",
+        "Linux"
+      ],
+      "nivel": "Iniciante",
+      "numero_modulos": 9,
+      "xp_total": 5700,
+      "badges_disponiveis": [
+        "Cloud Primer",
+        "Região e Zona",
+        "Infra Explorer"
+      ],
+      "promocoes": {
+        "ativa": false,
+        "descricao": "Nenhuma promoção fictícia ativa",
+        "validade": null
+      },
+      "vitalicio": true,
+      "lives_ao_vivo": [
+        {
+          "tema": "Primeiros passos na nuvem",
+          "frequencia": "Terças às 19h30",
+          "status": "agenda fictícia"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "nome": "Azure DevOps e Entrega Contínua",
+      "tecnologia": [
+        "Azure",
+        "Azure DevOps",
+        "GitHub Actions"
+      ],
+      "nivel": "Avançado",
+      "numero_modulos": 14,
+      "xp_total": 10300,
+      "badges_disponiveis": [
+        "Pipeline Pilot",
+        "Deploy Contínuo",
+        "Cloud Delivery"
+      ],
+      "promocoes": {
+        "ativa": true,
+        "descricao": "Sessão fictícia de revisão de pipeline",
+        "validade": "2027-04-30"
+      },
+      "vitalicio": false,
+      "lives_ao_vivo": [
+        {
+          "tema": "Pipeline CI/CD do commit à entrega",
+          "frequencia": "Quartas às 19h",
+          "status": "agenda fictícia"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "nome": "Docker e Kubernetes Essencial",
+      "tecnologia": [
+        "Docker",
+        "Kubernetes",
+        "YAML"
+      ],
+      "nivel": "Avançado",
+      "numero_modulos": 13,
+      "xp_total": 9800,
+      "badges_disponiveis": [
+        "Container Captain",
+        "Pod Explorer",
+        "Orquestração Básica"
+      ],
+      "promocoes": {
+        "ativa": false,
+        "descricao": "Sem promoção fictícia vigente",
+        "validade": null
+      },
+      "vitalicio": true,
+      "lives_ao_vivo": [
+        {
+          "tema": "Aplicação containerizada em cluster local",
+          "frequencia": "Sábados às 14h",
+          "status": "agenda fictícia"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "nome": "Git, GitHub e Colaboração",
+      "tecnologia": [
+        "Git",
+        "GitHub",
+        "Markdown"
+      ],
+      "nivel": "Iniciante",
+      "numero_modulos": 7,
+      "xp_total": 3600,
+      "badges_disponiveis": [
+        "Commit Master",
+        "Pull Request Aberto",
+        "Colaborador"
+      ],
+      "promocoes": {
+        "ativa": true,
+        "descricao": "Desafio colaborativo fictício com badge especial",
+        "validade": "2027-05-15"
+      },
+      "vitalicio": true,
+      "lives_ao_vivo": [
+        {
+          "tema": "Fluxo de branches em equipe",
+          "frequencia": "Segundas às 18h30",
+          "status": "agenda fictícia"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "nome": "Linux e Shell Script",
+      "tecnologia": [
+        "Linux",
+        "Bash",
+        "Terminal"
+      ],
+      "nivel": "Intermediário",
+      "numero_modulos": 9,
+      "xp_total": 5900,
+      "badges_disponiveis": [
+        "Terminal Ninja",
+        "Script Runner",
+        "Permissão Correta"
+      ],
+      "promocoes": {
+        "ativa": false,
+        "descricao": "Nenhuma oferta fictícia ativa",
+        "validade": null
+      },
+      "vitalicio": false,
+      "lives_ao_vivo": [
+        {
+          "tema": "Automação com Bash",
+          "frequencia": "Sábados às 11h",
+          "status": "agenda fictícia"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "nome": "Cibersegurança: Primeiros Passos",
+      "tecnologia": [
+        "Linux",
+        "Redes",
+        "OWASP"
+      ],
+      "nivel": "Iniciante",
+      "numero_modulos": 10,
+      "xp_total": 6200,
+      "badges_disponiveis": [
+        "Security Mindset",
+        "Threat Spotter",
+        "Defesa Inicial"
+      ],
+      "promocoes": {
+        "ativa": true,
+        "descricao": "Laboratório didático fictício adicional",
+        "validade": "2027-04-01"
+      },
+      "vitalicio": false,
+      "lives_ao_vivo": [
+        {
+          "tema": "Princípios de segurança para aplicações",
+          "frequencia": "Quintas às 20h",
+          "status": "agenda fictícia"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "nome": "UX/UI Design para Produtos Digitais",
+      "tecnologia": [
+        "Figma",
+        "Design Systems",
+        "Prototipação"
+      ],
+      "nivel": "Iniciante",
+      "numero_modulos": 8,
+      "xp_total": 4700,
+      "badges_disponiveis": [
+        "Wireframe Wizard",
+        "Protótipo Clicável",
+        "UX Thinker"
+      ],
+      "promocoes": {
+        "ativa": false,
+        "descricao": "Sem promoção fictícia no momento",
+        "validade": null
+      },
+      "vitalicio": true,
+      "lives_ao_vivo": [
+        {
+          "tema": "Do problema ao protótipo",
+          "frequencia": "Terças às 18h",
+          "status": "agenda fictícia"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "nome": "Desenvolvimento Mobile com Flutter",
+      "tecnologia": [
+        "Flutter",
+        "Dart",
+        "Firebase"
+      ],
+      "nivel": "Intermediário",
+      "numero_modulos": 12,
+      "xp_total": 8200,
+      "badges_disponiveis": [
+        "Dart Starter",
+        "Widget Builder",
+        "App no Ar"
+      ],
+      "promocoes": {
+        "ativa": true,
+        "descricao": "Desafio de aplicativo fictício com certificado bônus",
+        "validade": "2027-06-30"
+      },
+      "vitalicio": false,
+      "lives_ao_vivo": [
+        {
+          "tema": "Construindo telas adaptáveis",
+          "frequencia": "Quartas às 19h30",
+          "status": "agenda fictícia"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "nome": "Desenvolvimento Android com Kotlin",
+      "tecnologia": [
+        "Kotlin",
+        "Android Studio",
+        "Jetpack Compose"
+      ],
+      "nivel": "Intermediário",
+      "numero_modulos": 13,
+      "xp_total": 8800,
+      "badges_disponiveis": [
+        "Kotlin Coder",
+        "Compose Creator",
+        "Android Builder"
+      ],
+      "promocoes": {
+        "ativa": false,
+        "descricao": "Nenhuma promoção fictícia ativa",
+        "validade": null
+      },
+      "vitalicio": true,
+      "lives_ao_vivo": [
+        {
+          "tema": "Interface Android com Compose",
+          "frequencia": "Sábados às 10h30",
+          "status": "agenda fictícia"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "nome": "Inteligência Artificial Generativa",
+      "tecnologia": [
+        "Python",
+        "LLMs",
+        "Prompt Engineering"
+      ],
+      "nivel": "Intermediário",
+      "numero_modulos": 11,
+      "xp_total": 7900,
+      "badges_disponiveis": [
+        "Prompt Crafter",
+        "LLM Explorer",
+        "IA Responsável"
+      ],
+      "promocoes": {
+        "ativa": true,
+        "descricao": "Workshop fictício de prototipação com IA",
+        "validade": "2027-03-10"
+      },
+      "vitalicio": false,
+      "lives_ao_vivo": [
+        {
+          "tema": "Prototipando uma aplicação com LLM",
+          "frequencia": "Sextas às 20h",
+          "status": "agenda fictícia"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "nome": "Machine Learning com Python",
+      "tecnologia": [
+        "Python",
+        "Scikit-learn",
+        "NumPy"
+      ],
+      "nivel": "Avançado",
+      "numero_modulos": 15,
+      "xp_total": 11600,
+      "badges_disponiveis": [
+        "Model Trainer",
+        "Feature Engineer",
+        "ML Practitioner"
+      ],
+      "promocoes": {
+        "ativa": false,
+        "descricao": "Sem oferta fictícia vigente",
+        "validade": null
+      },
+      "vitalicio": true,
+      "lives_ao_vivo": [
+        {
+          "tema": "Treinando e avaliando modelos",
+          "frequencia": "Quintas às 19h30",
+          "status": "agenda fictícia"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "nome": "Data Science e Estatística Aplicada",
+      "tecnologia": [
+        "Python",
+        "Pandas",
+        "Estatística"
+      ],
+      "nivel": "Avançado",
+      "numero_modulos": 14,
+      "xp_total": 10800,
+      "badges_disponiveis": [
+        "Data Storyteller",
+        "Estatístico Prático",
+        "Insight Finder"
+      ],
+      "promocoes": {
+        "ativa": true,
+        "descricao": "Estudo de caso fictício extra incluído",
+        "validade": "2027-05-31"
+      },
+      "vitalicio": false,
+      "lives_ao_vivo": [
+        {
+          "tema": "Estatística aplicada a perguntas reais",
+          "frequencia": "Segundas às 20h",
+          "status": "agenda fictícia"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "nome": "Go para Serviços de Alta Performance",
+      "tecnologia": [
+        "Go",
+        "Docker",
+        "gRPC"
+      ],
+      "nivel": "Avançado",
+      "numero_modulos": 12,
+      "xp_total": 9200,
+      "badges_disponiveis": [
+        "Gopher Explorer",
+        "Concorrência Go",
+        "Service Builder"
+      ],
+      "promocoes": {
+        "ativa": false,
+        "descricao": "Nenhuma promoção fictícia disponível",
+        "validade": null
+      },
+      "vitalicio": true,
+      "lives_ao_vivo": [
+        {
+          "tema": "Concorrência e goroutines",
+          "frequencia": "Quartas às 20h",
+          "status": "agenda fictícia"
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "nome": "PHP e Laravel para Aplicações Web",
+      "tecnologia": [
+        "PHP",
+        "Laravel",
+        "MySQL"
+      ],
+      "nivel": "Intermediário",
+      "numero_modulos": 11,
+      "xp_total": 7100,
+      "badges_disponiveis": [
+        "Laravel Launch",
+        "Eloquent Explorer",
+        "Web Artisan"
+      ],
+      "promocoes": {
+        "ativa": true,
+        "descricao": "Revisão fictícia de projeto final",
+        "validade": "2027-04-20"
+      },
+      "vitalicio": true,
+      "lives_ao_vivo": [
+        {
+          "tema": "CRUD completo com Laravel",
+          "frequencia": "Terças às 19h",
+          "status": "agenda fictícia"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "nome": "Ruby on Rails para Produtos Web",
+      "tecnologia": [
+        "Ruby",
+        "Ruby on Rails",
+        "PostgreSQL"
+      ],
+      "nivel": "Intermediário",
+      "numero_modulos": 10,
+      "xp_total": 6800,
+      "badges_disponiveis": [
+        "Rubyist",
+        "Rails Builder",
+        "Convention Keeper"
+      ],
+      "promocoes": {
+        "ativa": false,
+        "descricao": "Sem promoção fictícia vigente",
+        "validade": null
+      },
+      "vitalicio": false,
+      "lives_ao_vivo": [
+        {
+          "tema": "Convenções Rails em um app pequeno",
+          "frequencia": "Sextas às 19h",
+          "status": "agenda fictícia"
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "nome": "Blockchain e Smart Contracts",
+      "tecnologia": [
+        "Solidity",
+        "Ethereum",
+        "Hardhat"
+      ],
+      "nivel": "Avançado",
+      "numero_modulos": 13,
+      "xp_total": 10100,
+      "badges_disponiveis": [
+        "Contract Coder",
+        "Web3 Explorer",
+        "Smart Contract Tester"
+      ],
+      "promocoes": {
+        "ativa": true,
+        "descricao": "Ambiente de testes fictício e desafio bônus",
+        "validade": "2027-06-01"
+      },
+      "vitalicio": false,
+      "lives_ao_vivo": [
+        {
+          "tema": "Contrato inteligente em rede de testes",
+          "frequencia": "Quintas às 20h30",
+          "status": "agenda fictícia"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "nome": "Internet das Coisas com ESP32",
+      "tecnologia": [
+        "C++",
+        "ESP32",
+        "MQTT"
+      ],
+      "nivel": "Intermediário",
+      "numero_modulos": 10,
+      "xp_total": 7400,
+      "badges_disponiveis": [
+        "Sensor conectado",
+        "MQTT Messenger",
+        "IoT Maker"
+      ],
+      "promocoes": {
+        "ativa": false,
+        "descricao": "Nenhuma oferta fictícia ativa",
+        "validade": null
+      },
+      "vitalicio": true,
+      "lives_ao_vivo": [
+        {
+          "tema": "Enviando telemetria de um sensor",
+          "frequencia": "Sábados às 15h",
+          "status": "agenda fictícia"
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "nome": "Testes Automatizados e Qualidade de Software",
+      "tecnologia": [
+        "Pytest",
+        "Playwright",
+        "CI"
+      ],
+      "nivel": "Intermediário",
+      "numero_modulos": 9,
+      "xp_total": 6500,
+      "badges_disponiveis": [
+        "Test First",
+        "Automation Builder",
+        "Quality Guardian"
+      ],
+      "promocoes": {
+        "ativa": true,
+        "descricao": "Checklist fictício de qualidade para projeto",
+        "validade": "2027-03-25"
+      },
+      "vitalicio": true,
+      "lives_ao_vivo": [
+        {
+          "tema": "Testes de ponta a ponta com Playwright",
+          "frequencia": "Quartas às 18h30",
+          "status": "agenda fictícia"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "nome": "Arquitetura de Software e Design Patterns",
+      "tecnologia": [
+        "UML",
+        "DDD",
+        "Clean Architecture"
+      ],
+      "nivel": "Avançado",
+      "numero_modulos": 14,
+      "xp_total": 10900,
+      "badges_disponiveis": [
+        "Pattern Seeker",
+        "Domain Mapper",
+        "Architecture Thinker"
+      ],
+      "promocoes": {
+        "ativa": false,
+        "descricao": "Sem promoção fictícia no momento",
+        "validade": null
+      },
+      "vitalicio": false,
+      "lives_ao_vivo": [
+        {
+          "tema": "Separando domínio e infraestrutura",
+          "frequencia": "Segundas às 19h30",
+          "status": "agenda fictícia"
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "nome": "TypeScript para Aplicações Escaláveis",
+      "tecnologia": [
+        "TypeScript",
+        "Node.js",
+        "React"
+      ],
+      "nivel": "Intermediário",
+      "numero_modulos": 10,
+      "xp_total": 7200,
+      "badges_disponiveis": [
+        "Type Safety",
+        "Generic Master",
+        "TS Builder"
+      ],
+      "promocoes": {
+        "ativa": true,
+        "descricao": "Exercício fictício extra de migração para TypeScript",
+        "validade": "2027-05-20"
+      },
+      "vitalicio": true,
+      "lives_ao_vivo": [
+        {
+          "tema": "Tipos avançados sem complicação",
+          "frequencia": "Terças às 20h",
+          "status": "agenda fictícia"
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "nome": "Geoprocessamento e Mapas Interativos",
+      "tecnologia": [
+        "Python",
+        "GeoJSON",
+        "Leaflet"
+      ],
+      "nivel": "Intermediário",
+      "numero_modulos": 9,
+      "xp_total": 7000,
+      "badges_disponiveis": [
+        "Map Maker",
+        "GeoJSON Explorer",
+        "Cartógrafo Digital"
+      ],
+      "promocoes": {
+        "ativa": false,
+        "descricao": "Nenhuma promoção fictícia vigente",
+        "validade": null
+      },
+      "vitalicio": true,
+      "lives_ao_vivo": [
+        {
+          "tema": "Visualizando dados geográficos no mapa",
+          "frequencia": "Quintas às 19h",
+          "status": "agenda fictícia"
+        }
+      ]
+    }
+  ]
+}

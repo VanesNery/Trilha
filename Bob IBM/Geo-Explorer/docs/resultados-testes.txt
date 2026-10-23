@@ -1,0 +1,69 @@
+GEO-EXPLORER — RESULTADO FINAL DOS TESTES
+Data: 23/10/2026
+Resultado: APROVADO
+
+- 20 testes executados: 20 aprovados, 0 falhas.
+- Cobertura: linhas 100%, branches 97,83%, funções 100%.
+- TypeScript: verificação `tsc --noEmit` concluída sem erros.
+
+Arquivos de teste:
+- tests/unit/trilha.test.ts
+- tests/unit/desafio.test.ts
+- tests/unit/certificado.test.ts
+- tests/flow/geo-explorer-flow.test.ts
+
+Saída detalhada da execução:
+
+
+> geo-explorer@1.0.0 test:coverage
+> node --experimental-strip-types --experimental-test-coverage --test-coverage-include=commands/**/*.ts --test-coverage-lines=80 --test-coverage-branches=80 --test-coverage-functions=80 --test tests/unit/*.test.ts tests/flow/*.test.ts
+
+▶ fluxo de estudo e conclusão em Java
+  ✔ consulta JAVA, gera desafio e salva desafio e certificado para o mesmo aluno (62.24132ms)
+✔ fluxo de estudo e conclusão em Java (63.108292ms)
+▶ /certificado
+  ✔ está registrado localmente no Bob (2.625339ms)
+  ✔ mostra instruções se nome ou trilha estiver faltando (0.376706ms)
+  ✔ rejeita trilha não cadastrada (2.06224ms)
+  ✔ gera certificado fictício para a trilha de Java (59.554835ms)
+✔ /certificado (65.94097ms)
+▶ /desafio
+  ✔ está registrado localmente no Bob (1.618677ms)
+  ✔ mostra uso sem argumentos (0.32791ms)
+  ✔ rejeita combinação de nível e tecnologia não cadastrada (2.589388ms)
+  ✔ gera desafio básico para Java com requisitos e critérios (1.348516ms)
+  ✔ cria desafio de nível intermediário (1.362808ms)
+  ✔ cria desafio de nível avançado (1.074166ms)
+✔ /desafio (9.841525ms)
+▶ /trilha
+  ✔ está registrado localmente no Bob (2.047235ms)
+  ✔ normaliza diferenças de caixa e acentuação (0.47755ms)
+  ✔ carrega trilhas e formata opções (0.727381ms)
+  ✔ informa quando o arquivo do catálogo está ausente (1.395998ms)
+  ✔ rejeita catálogo sem a lista trilhas (2.271147ms)
+  ✔ mostra uso quando não recebe argumento (0.41716ms)
+  ✔ lista opções quando JAVA corresponde a mais de uma trilha (1.063561ms)
+  ✔ gera plano com quantidade exata de módulos ao selecionar pelo nome (1.494042ms)
+  ✔ informa as tecnologias disponíveis quando não há correspondência (0.874403ms)
+✔ /trilha (12.824455ms)
+ℹ tests 20
+ℹ suites 4
+ℹ pass 20
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 338.113871
+ℹ start of coverage report
+ℹ ----------------------------------------------------------------
+ℹ file            | line % | branch % | funcs % | uncovered lines
+ℹ ----------------------------------------------------------------
+ℹ commands        |        |          |         | 
+ℹ  certificado.ts | 100.00 |   100.00 |  100.00 | 
+ℹ  desafio.ts     | 100.00 |   100.00 |  100.00 | 
+ℹ  index.ts       | 100.00 |   100.00 |  100.00 | 
+ℹ  trilha.ts      | 100.00 |    93.33 |  100.00 | 
+ℹ ----------------------------------------------------------------
+ℹ all files       | 100.00 |    97.83 |  100.00 | 
+ℹ ----------------------------------------------------------------
+ℹ end of coverage report

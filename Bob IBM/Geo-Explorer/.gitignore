@@ -1,0 +1,22 @@
+# Dependências instaladas localmente
+node_modules/
+**/node_modules/
+
+# Segredos e variáveis locais
+.env
+**/.env
+.env.*
+**/.env.*
+
+# Dados locais e arquivos temporários
+data/cache-progresso/
+docs/certificados-emetidos/
+*.tmp
+**/*.tmp
+
+# Saída de cobertura gerada pelos testes
+coverage/
+
+# Metadados do macOS
+.DS_Store
+**/.DS_Store
