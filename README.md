@@ -1,57 +1,84 @@
-# Trilha Python - DIO
+# Trilha de estudos e projetos
 
-Repositório destinado ao acompanhamento dos meus estudos e práticas realizados durante a trilha de desenvolvimento Python da [DIO](https://www.dio.me/).
+Repositório pessoal para reunir exercícios, desafios e projetos desenvolvidos durante estudos de programação, com foco em Python e ferramentas relacionadas. O conteúdo vem de diferentes cursos e iniciativas, por isso cada pasta pode ter seus próprios requisitos e instruções.
 
-## 📚 Conteúdos
+## Conteúdo
 
-Os estudos estão organizados de acordo com as etapas da trilha:
+### [`FIAP-Python/`](FIAP-Python/README.md)
 
-- **06 - Gerenciamento de pacotes e boas práticas**
-  - Gerenciamento de dependências
-  - Poetry
-  - Boas práticas de organização de projetos
-  - Desafios práticos
+Exercícios introdutórios de Python organizados por assunto: variáveis, estruturas lógicas e de dados, funções e manipulação de arquivos. A pasta tem um README próprio com exemplos de execução. Em geral, execute cada script separadamente com Python 3.
 
-- **07 - Banco de dados**
-  - Conceitos de banco de dados
-  - SQLite
-  - Operações e transações
+### [`Trilha-DIO/`](Trilha-DIO/)
 
-- **11 - Desenvolvimento de APIs com Flask**
-  - Flask
-  - APIs REST
-  - Poetry
-  - Migrations
-  - Testes
-  - `dio_bank`
-  - `dio_blog`
+Materiais e projetos da trilha de Python da DIO, organizados por módulo:
 
-- **12 - Desenvolvimento Full Stack com Django**
-  - Django
-  - Poetry
-  - Desenvolvimento web
-  - APIs e aplicações com Django
+- **06 — Gerenciamento de pacotes e boas práticas:** exemplos de organização e dependências com Poetry e Pipenv, além de desafios.
+- **07 — Banco de dados:** exercícios com SQLite, DB-API e transações.
+- **11 — Desenvolvimento de APIs com Flask:** projetos `dio_bank` e `dio_blog`. O blog inclui configuração Poetry e testes; consulte os READMEs de cada projeto antes de instalar dependências ou executar a aplicação.
+- **12 — Desenvolvimento full stack com Django:** arquivos de configuração Poetry para os estudos do módulo.
 
-- **Desafio - Formatando Dados em Python**
-  - Manipulação e formatação de dados
-  - Exercícios práticos em Python
+### [`Desafio - Formatando_Dados_Em_Python/`](Desafio%20-%20Formatando_Dados_Em_Python/)
 
-## 🛠️ Tecnologias
+Scripts curtos de prática para formatação de datas, conversão de temperatura e separação de domínios.
 
-- Python
-- Poetry
-- Flask
-- Django
+### [`Bob IBM/Geo-Explorer/`](<Bob IBM/Geo-Explorer/README.md>)
+
+Projeto didático em TypeScript que consulta um catálogo fictício de trilhas de aprendizagem, sugere planos e desafios, e expõe ferramentas por MCP. O README do projeto detalha instalação, execução, testes e limitações.
+
+### [`dio-agent/`](dio-agent/README.md)
+
+Agente de estudos da DIO, com instruções, documentação e skills para apoiar planejamento e aprendizagem em diferentes ambientes de agentes de IA. Consulte o README da pasta para configurar e utilizar o agente.
+
+## Tecnologias presentes
+
+- Python e gerenciamento de ambientes/dependências com Poetry e Pipenv
 - SQLite
-- Git
-- GitHub
+- Flask e Django
+- TypeScript, Node.js e npm
+- Model Context Protocol (MCP)
+- Git e GitHub
 
-## 🎯 Objetivo
+Cada projeto define suas próprias versões e comandos. Consulte os arquivos `README.md`, `pyproject.toml`, `Pipfile` ou `package.json` na respectiva pasta antes de executá-lo. Não existe um único comando de instalação ou de testes que cubra todo o repositório.
 
-Registrar minha evolução durante a trilha de Python, mantendo exercícios, desafios e projetos práticos organizados em um único repositório.
+## Como começar
 
-Este repositório representa meu ambiente de estudos e pode ser atualizado conforme avanço na trilha.
+Clone o repositório e entre na pasta:
 
----
+```bash
+git clone <URL_DO_REPOSITORIO>
+cd Trilha
+```
 
-Desenvolvido durante minha jornada de estudos em Python.
+Depois, escolha um projeto e siga as instruções locais. Por exemplo, para executar um exercício simples de Python:
+
+```bash
+python3 FIAP-Python/entendendoVariaveis/boas_vindas.py
+```
+
+Para o Geo-Explorer, entre na pasta do projeto e siga o fluxo documentado em seu README:
+
+```bash
+cd "Bob IBM/Geo-Explorer"
+npm install
+npm test
+```
+
+Projetos Flask, Django e exercícios que acessam arquivos ou bancos de dados podem exigir configuração ou execução a partir de suas próprias pastas. Veja a documentação local para evitar caminhos ou dependências incorretos.
+
+## Organização
+
+```text
+Trilha/
+├── FIAP-Python/                         # Exercícios Python da FIAP
+├── Trilha-DIO/                          # Módulos e projetos da trilha DIO
+├── Desafio - Formatando_Dados_Em_Python/ # Exercícios de formatação
+├── Bob IBM/Geo-Explorer/                # Projeto TypeScript e MCP
+├── dio-agent/                           # Agente de estudos e skills
+└── README.md                            # Visão geral do repositório
+```
+
+## Objetivo
+
+Manter os registros de estudo e projetos em um só lugar, documentando cada iniciativa no contexto em que foi criada. O repositório é voltado ao aprendizado; os projetos podem estar em estágios diferentes de conclusão e devem ser avaliados individualmente.
+
+Author by Vanessa Nery
